@@ -53,12 +53,16 @@
                     <input name="price" type="number" id="price" value="{{ $result->price }}" class="input input-bordered w-full">
                 </div>
                 <div class="mb-6">
-                    <label for="cost" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sewa Harian</label>
+                    <label for="cost" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Harga Sewa</label>
                     <input name="cost" type="number" id="cost" value="{{ $result->cost }}" class="input input-bordered w-full">
                 </div>
                 <div class="mb-6">
                     <label for="license_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Plat kendaraan</label>
                     <input name="license_number" type="text" id="license_number" value="{{ $result->license_number }}" class="input input-bordered w-full">
+                </div>
+                <div class="mb-6">
+                    <label for="description" class="label">Deskripsi</label>
+                    <textarea class="textarea textarea-bordered w-full" name="description" id="description" cols="30" rows="3"></textarea>
                 </div>
                 <button class="btn btn-primary">Simpan</button>
             </form>

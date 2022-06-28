@@ -66,13 +66,14 @@ function rupiah($angka){
                 </div>
             </div>
         </div>
-        <div class="container mx-auto px-20 py-32 grid md:grid-cols-4">
+        <div class="container mx-auto px-20 py-32 grid gap-5 md:grid-cols-4">
             @foreach($data as $key=>$value)
-            <div class="card w-96 glass">
-                <figure><img src="{{ $value->image }}" alt="car!"></figure>
+            <div class="card glass">
+                <figure><img class="w-full h-52" src="{{ $value->image }}" alt="car!"></figure>
                 <div class="card-body">
                     <h2 class="card-title">{{ $value->name }}</h2>
                     <p>{{ rupiah($value->cost) }}</p>
+                    <p>{{ $value->description }}</p>
                     <div class="card-actions justify-end">
                         <button class="btn btn-primary">Learn now!</button>
                     </div>

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('year');
             $table->integer('price');
             $table->integer('cost');
+            $table->longText('description');
             $table->timestamps();
         });
     }

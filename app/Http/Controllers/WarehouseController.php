@@ -39,6 +39,7 @@ class WarehouseController extends Controller
             'price' => 'required',
             'cost' => 'required',
             'license_number' => 'required',
+            'description' => 'required',
         ];
     }
 

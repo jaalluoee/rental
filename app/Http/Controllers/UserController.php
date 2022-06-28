@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use function GuzzleHttp\Promise\all;
 use function PHPUnit\Framework\returnSelf;
@@ -17,7 +18,6 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required',
         ];
-
     }
     /**
      * Display a listing of the resource.
@@ -26,8 +26,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $results=User::paginate(15);
-        return view('user.index',compact('results'));
+        $results = User::paginate(15);
+        return view('user.index', compact('results'));
     }
 
     /**
@@ -60,6 +60,7 @@ class UserController extends Controller
         } else {
             User::create([
                 ...$data,
+                'password' => Hash::make($data['password'])
             ]);
         }
         return redirect()->route('user.index');
@@ -85,7 +86,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $data=User::findOrFail($id);
+        $data = User::findOrFail($id);
         return view('user.edit', compact('data'));
     }
 
@@ -98,9 +99,24 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user=User::findOrFail($id);
-        $data=$request->all();
-        $user->update($data);
+        $user = User::findOrFail($id);
+        $data = $request->all();
+        if ($request->has('image')) {
+            $filename = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME);
+            $imageName = $filename . '_' . time() . '.' . $request->image->extension();
+            $request->image->storeAs('images', $imageName);
+            $user->update([
+                ...$data,
+                'image' => asset('storage/images/' . $imageName),
+                'password' => Hash::make($data['password'])
+            ]);
+        } else {
+
+            $user->update([
+                ...$data,
+                'password' => Hash::make($data['password'])
+            ]);
+        }
         return redirect()->route('user.index');
     }
 
@@ -112,7 +128,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $data=User::findOrFail($id);
+        $data = User::findOrFail($id);
         $data->delete();
         return redirect()->back();
     }
