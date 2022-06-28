@@ -60,12 +60,12 @@
                     <span></span>
                 </div>
                 <div class="mb-6">
-                    <label for="cost" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Harga Sewa (Per Hari)</label>
+                    <label for="cost" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sewa Harian</label>
                     <input name="cost" type="number" id="cost" class="input input-bordered w-full" value="{{ old('cost') }}">
                     <span></span>
                 </div>
                 <div class="mb-6">
-                    <label for="license_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">PLat Kendaraan</label>
+                    <label for="license_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Plat Kendaraan</label>
                     <input name="license_number" type="text" id="license_number" class="input input-bordered w-full" value="{{ old('license_number') }}">
                     <span></span>
                 </div>

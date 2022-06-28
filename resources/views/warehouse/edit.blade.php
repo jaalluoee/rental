@@ -53,7 +53,7 @@
                     <input name="price" type="number" id="price" value="{{ $result->price }}" class="input input-bordered w-full">
                 </div>
                 <div class="mb-6">
-                    <label for="cost" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Harga Sewa</label>
+                    <label for="cost" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sewa Harian</label>
                     <input name="cost" type="number" id="cost" value="{{ $result->cost }}" class="input input-bordered w-full">
                 </div>
                 <div class="mb-6">

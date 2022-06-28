@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WarehouseController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::controller(WarehouseController::class)->prefix('warehouse')->group(function () {
+Route::controller(WarehouseController::class)->middleware('auth')->prefix('warehouse')->group(function () {
     Route::get('/', 'index')->name('warehouse.index');
     Route::get('/create', 'create')->name('warehouse.create');
     Route::post('/create', 'store')->name('warehouse.store');
@@ -32,4 +32,14 @@ Route::controller(WarehouseController::class)->prefix('warehouse')->group(functi
     Route::get('/{id}/edit', 'edit')->name('warehouse.edit');
     Route::post('/{id}', 'update')->name('warehouse.update');
     Route::get('/{id}/show', 'show')->name('warehouse.detail');
+});
+
+Route::controller(UserController::class)->middleware('auth')->prefix('user')->group(function() {
+    Route::get('/', 'index')->name('user.index');
+    Route::get('/create', 'create')->name('user.create');
+    Route::post('/create', 'store')->name('user.store');
+    Route::delete('/delete/{id}', 'destroy')->name('user.delete');
+    Route::get('/{id}/edit', 'edit')->name('user.edit');
+    Route::post('/{id}', 'update')->name('user.update');
+    Route::get('/{id}/show', 'show')->name('user.detail');
 });

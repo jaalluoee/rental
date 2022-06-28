@@ -1,3 +1,11 @@
+@php
+function rupiah($angka){
+	
+	$hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+	return $hasil_rupiah;
+ 
+}
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +20,7 @@
 <body>
     <nav class="navbar bg-base-100">
         <div class="flex-1">
-            <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+            <a class="btn btn-ghost normal-case text-xl">SUBDRIVEWEB</a>
         </div>
         <div class="flex-none">
             <ul class="menu menu-horizontal p-0">
@@ -57,6 +65,20 @@
 
                 </div>
             </div>
+        </div>
+        <div class="container mx-auto px-20 py-32 grid md:grid-cols-4">
+            @foreach($data as $key=>$value)
+            <div class="card w-96 glass">
+                <figure><img src="{{ $value->image }}" alt="car!"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">{{ $value->name }}</h2>
+                    <p>{{ rupiah($value->cost) }}</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Learn now!</button>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
     </main>
 </body>
