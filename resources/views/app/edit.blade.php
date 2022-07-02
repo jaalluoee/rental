@@ -22,10 +22,10 @@
                 </div>
             </div>
             @endif
-            <form method="POST" action="{{ route('user.update',$data->id) }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('app.update',$data->id) }}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-6">
-                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama User</label>
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama </label>
                     <input type="text" id="name" name="name" class="input input-bordered w-full" value="{{ $data->name }}">
                     <span></span>
                 </div>
@@ -35,18 +35,8 @@
                     <span></span>
                 </div>
                 <div class="mb-6">
-                    <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gambar</label>
-                    <input type="file" name="image" id="image" class="input input-bordered w-full" value="{{ $data->image }}">
-                    <span></span>
-                </div>
-                <div class="mb-6">
                     <label for="phone" class="label">Nomor HP</label>
                     <input name="phone" type="number" id="phone" class="input input-bordered w-full" value="{{ $data->phone  }}">
-                    <span></span>
-                </div>
-                <div class="mb-6">
-                    <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Jenis Kelamain</label>
-                    <input type="text" id="gender" name="gender" class="input input-bordered w-full" value="{{ $data->gender }}">
                     <span></span>
                 </div>
                 <div class="mb-6">
@@ -55,8 +45,13 @@
                     <span></span>
                 </div>
                 <div class="mb-6">
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
-                    <input name="password" type="password" id="password" class="input input-bordered w-full" value="">
+                    <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gambar</label>
+                    <input type="file" name="image" id="image" class="input input-bordered w-full" value="{{ $data->image }}">
+                    <span></span>
+                </div>
+                <div class="mb-6">
+                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deskripsi</label>
+                    <input type="text" id="description" name="description" class="input input-bordered w-full" value="{{ $data->description }}">
                     <span></span>
                 </div>
                 <button class="btn btn-primary">Simpan</button>

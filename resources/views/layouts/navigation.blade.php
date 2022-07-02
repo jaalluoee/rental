@@ -6,7 +6,6 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
@@ -24,6 +23,11 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
                         User
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('app.index')" :active="request()->routeIs('app.index')">
+                        Pengaturan
                     </x-nav-link>
                 </div>
             </div>

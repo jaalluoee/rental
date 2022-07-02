@@ -7,7 +7,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-start">
-                <a href="{{ route('user.create') }}" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                <a href="{{ route('app.create') }}" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                     Tambah Data
                 </a>
             </div>
@@ -36,7 +36,7 @@
                         @foreach($results as $result)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <th scope="row" class="link">
-                                <a href="{{ route('user.detail', $result->id) }}">
+                                <a href="{{ route('app.detail', $result->id) }}">
                                     {{ $result->name }}
                                 </a>
                             </th>
@@ -50,8 +50,8 @@
                             </td>
                             <td class="px-6 py-4 text-right">
                                 <div class="flex gap-5">
-                                    <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="{{ route('user.edit', $result->id) }}">Edit</a>
-                                    <form method="POST" action="{{ route('user.delete', $result->id) }}">
+                                    <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="{{ route('app.edit', $result->id) }}">Edit</a>
+                                    <form method="POST" action="{{ route('app.delete', $result->id) }}">
                                         @method('delete')
                                         @csrf
                                         <button class="font-medium text-red-600 dark:text-red-500 hover:underline">

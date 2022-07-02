@@ -40,6 +40,21 @@
                     <span></span>
                 </div>
                 <div class="mb-6">
+                    <label for="phone" class="label">Nomor HP</label>
+                    <input name="phone" type="number" id="phone" class="input input-bordered w-full" value="{{ old('phone') }}">
+                    <span></span>
+                </div>
+                <div class="mb-6">
+                    <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Jenis Kelamain</label>
+                    <input type="text" id="gender" name="gender" class="input input-bordered w-full" value="{{ old('gender') }}">
+                    <span></span>
+                </div>
+                <div class="mb-6">
+                    <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alamat</label>
+                    <input type="text" id="address" name="address" class="input input-bordered w-full" value="{{ old('address') }}">
+                    <span></span>
+                </div>
+                <div class="mb-6">
                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
                     <input name="password" type="password" id="password" class="input input-bordered w-full" value="{{ old('password') }}">
                     <span></span>

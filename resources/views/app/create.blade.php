@@ -22,46 +22,40 @@
                 </div>
             </div>
             @endif
-            <form method="POST" action="{{ route('user.update',$data->id) }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('app.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-6">
-                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama User</label>
-                    <input type="text" id="name" name="name" class="input input-bordered w-full" value="{{ $data->name }}">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama</label>
+                    <input type="text" id="name" name="name" class="input input-bordered w-full" value="{{ old('name') }}">
                     <span></span>
                 </div>
                 <div class="mb-6">
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
-                    <input type="email" name="email" id="email" class="input input-bordered w-full" value="{{ $data->email }}">
+                    <input type="email" name="email" id="email" class="input input-bordered w-full" value="{{ old('email') }}">
                     <span></span>
                 </div>
                 <div class="mb-6">
-                    <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gambar</label>
-                    <input type="file" name="image" id="image" class="input input-bordered w-full" value="{{ $data->image }}">
-                    <span></span>
-                </div>
-                <div class="mb-6">
-                    <label for="phone" class="label">Nomor HP</label>
-                    <input name="phone" type="number" id="phone" class="input input-bordered w-full" value="{{ $data->phone  }}">
-                    <span></span>
-                </div>
-                <div class="mb-6">
-                    <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Jenis Kelamain</label>
-                    <input type="text" id="gender" name="gender" class="input input-bordered w-full" value="{{ $data->gender }}">
+                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nomor</label>
+                    <input type="number" name="phone" id="phone" class="input input-bordered w-full" value="{{ old('phone') }}">
                     <span></span>
                 </div>
                 <div class="mb-6">
                     <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alamat</label>
-                    <input type="text" id="address" name="address" class="input input-bordered w-full" value="{{ $data->address }}">
+                    <input name="address" type="text" id="address" class="input input-bordered w-full" value="{{ old('address') }}">
                     <span></span>
                 </div>
                 <div class="mb-6">
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
-                    <input name="password" type="password" id="password" class="input input-bordered w-full" value="">
+                    <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gambar</label>
+                    <input type="file" id="image" name="image" class="input input-bordered w-full" value="{{ old('image') }}">
+                    <span></span>
+                </div>
+                <div class="mb-6">
+                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deskripsi</label>
+                    <input type="text" id="description" name="description" class="input input-bordered w-full" value="{{ old('description') }}">
                     <span></span>
                 </div>
                 <button class="btn btn-primary">Simpan</button>
             </form>
-
         </div>
     </div>
 </x-app-layout>

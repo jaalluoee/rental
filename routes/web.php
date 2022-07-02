@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppConfigController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WarehouseController;
@@ -42,4 +43,19 @@ Route::controller(UserController::class)->middleware('auth')->prefix('user')->gr
     Route::get('/{id}/edit', 'edit')->name('user.edit');
     Route::post('/{id}', 'update')->name('user.update');
     Route::get('/{id}/show', 'show')->name('user.detail');
+});
+
+Route::controller(AppConfigController::class)->middleware('auth')->prefix('app')->group(function() {
+    Route::get('/', 'index')->name('app.index');
+    Route::get('/create', 'create')->name('app.create');
+    Route::post('/create', 'store')->name('app.store');
+    Route::get('/{id}/show', 'show')->name('app.detail');
+    Route::delete('/delete/{id}', 'destroy')->name('app.delete');
+    Route::get('/{id}/edit', 'edit')->name('app.edit');
+    Route::post('/{id}', 'update')->name('app.update');
+
+
+
+
+
 });
