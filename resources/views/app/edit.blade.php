@@ -50,9 +50,13 @@
                     <span></span>
                 </div>
                 <div class="mb-6">
-                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deskripsi</label>
-                    <input type="text" id="description" name="description" class="input input-bordered w-full" value="{{ $data->description }}">
+                    <label for="maps" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Maps</label>
+                    <input type="text" name="maps" id="maps" class="input input-bordered w-full" value="{{ $data->maps }}">
                     <span></span>
+                </div>
+                <div class="mb-6">
+                    <label for="description" class="label">Deskripsi</label>
+                    <textarea class="textarea textarea-bordered w-full"  name="description" id="description" cols="30" rows="3">{{ $data->description }}</textarea> 
                 </div>
                 <button class="btn btn-primary">Simpan</button>
             </form>

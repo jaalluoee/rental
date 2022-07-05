@@ -50,9 +50,8 @@
                     <span></span>
                 </div>
                 <div class="mb-6">
-                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deskripsi</label>
-                    <input type="text" id="description" name="description" class="input input-bordered w-full" value="{{ old('description') }}">
-                    <span></span>
+                    <label for="description" class="label">Deskripsi</label>
+                    <textarea class="textarea textarea-bordered w-full" name="description" id="description" cols="30" rows="3"></textarea>
                 </div>
                 <button class="btn btn-primary">Simpan</button>
             </form>

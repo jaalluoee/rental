@@ -26,6 +26,11 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('order.index')" :active="request()->routeIs('order.index')">
+                        Order
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('app.index')" :active="request()->routeIs('app.index')">
                         Pengaturan
                     </x-nav-link>

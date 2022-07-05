@@ -22,7 +22,7 @@
                 </div>
             </div>
             @endif
-            <form method="POST" action="{{ route('warehouse.update', $result->id) }}">
+            <form method="POST" action="{{ route('warehouse.update', $result->id) }}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-6">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nama Produk</label>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="mb-6">
                     <label for="description" class="label">Deskripsi</label>
-                    <textarea class="textarea textarea-bordered w-full" name="description" id="description" cols="30" rows="3"></textarea>
+                    <textarea class="textarea textarea-bordered w-full"  name="description" id="description" cols="30" rows="3">{{$result->description}}</textarea> 
                 </div>
                 <button class="btn btn-primary">Simpan</button>
             </form>

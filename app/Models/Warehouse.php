@@ -14,4 +14,9 @@ class Warehouse extends Model
         'updated_at',
         'id'
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

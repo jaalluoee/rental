@@ -111,13 +111,25 @@ class UserController extends Controller
             $user->update([
                 ...$data,
                 'image' => asset('storage/images/' . $imageName),
+            ]);
+        } elseif ($request->has('password')) {
+            $user->update([
+                ...$data,
                 'password' => Hash::make($data['password'])
+            ]);
+        } elseif ($request->has('image') && $request->has('password')) {
+            $filename = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME);
+            $imageName = $filename . '_' . time() . '.' . $request->image->extension();
+            $request->image->storeAs('images', $imageName);
+            $user->update([
+                ...$data,
+                'password' => Hash::make($data['password']),
+                'image' => asset('storage/images/' . $imageName),
             ]);
         } else {
 
             $user->update([
                 ...$data,
-                'password' => Hash::make($data['password'])
             ]);
         }
         return redirect()->route('user.index');

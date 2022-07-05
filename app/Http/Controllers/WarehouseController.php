@@ -101,9 +101,25 @@ class WarehouseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $payload = $request->validate($this->rules());
+        $data = $request->validate($this->rules());
         $warehouse = Warehouse::findOrFail($id);
-        $warehouse->update($request->except('image'));
+        try {
+            if ($request->has('image')) {
+                $filename = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME);
+                $imageName = $filename . '_' . time() . '.' . $request->image->extension();
+                $request->image->storeAs('images', $imageName);
+                $warehouse->update([
+                    ...$data,
+                    'image' => asset('storage/images/' . $imageName),
+                ]);
+            } else {
+                $warehouse->update([
+                    ...$data,
+                ]);
+            }
+        } catch (\Throwable $th) {
+            return redirect()->route('warehouse.index');
+        }
         return redirect()->route('warehouse.index');
     }
 

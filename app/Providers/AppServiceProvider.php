@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\AppConfig;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     {
         $settings = AppConfig::first();
         View::share('settings', $settings);
+        Paginator::useTailwind();
     }
 }

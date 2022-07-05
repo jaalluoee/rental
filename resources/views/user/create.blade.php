@@ -46,7 +46,10 @@
                 </div>
                 <div class="mb-6">
                     <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Jenis Kelamain</label>
-                    <input type="text" id="gender" name="gender" class="input input-bordered w-full" value="{{ old('gender') }}">
+                    <select class="select select-primary w-full" name="gender" id="gender">
+                        <option value="laki laki">laki laki</option>
+                        <option value="perempuan">perempuan</option>
+                    </select>
                     <span></span>
                 </div>
                 <div class="mb-6">
