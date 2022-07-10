@@ -21,7 +21,7 @@ return $hasil_rupiah;
                 </div>
             </div>
         </div>
-        <div class="container mx-auto px-20 py-32 grid gap-5 md:grid-cols-4">
+        <div class="container mx-auto px-20 py-32 grid sm:grid-cols-2 gap-5 md:grid-cols-4">
             @foreach($data as $key=>$value)
             <div class="card glass">
                 <figure><img class="w-full h-52" src="{{ $value->image }}" alt="car!"></figure>
@@ -30,7 +30,7 @@ return $hasil_rupiah;
                     <p>{{ rupiah($value->cost) }}</p>
                     <p class="text-justify">{{ $value->description }}</p>
                     <div class="card-actions justify-end">
-                        <a href="{{ route('product.show', $value->id) }}" class="btn btn-primary">Lihat Kendaraan</a>
+                        <a href="{{ route('product.show', $value->id) }}" class="btn btn-primary">Pesan Sekarang</a>
                     </div>
                 </div>
             </div>

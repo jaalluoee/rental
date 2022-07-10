@@ -29,6 +29,13 @@ class ProductController extends Controller
 
     public function createOrder(Request $request)
     {
+        $request->validate([
+            'name'=>'required',
+            'phone'=>'required',
+            'email'=>'required',
+            'duration'=>'required',
+            'description'=>'required',
+        ]);
         Order::create([
             'name'=>$request->name,
             'phone'=>$request->phone,
@@ -38,6 +45,6 @@ class ProductController extends Controller
             'description'=>$request->description,
         ]);
 
-        return back()->with('message', 'Terima Kasih Sudah Memesan');
+        return back()->with('message', 'Terima Kasih Sudah Memesan. Pihak Admin kami akan segera menghubungi anda, Mohon ditunggu.');
     }
 }

@@ -102,6 +102,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'gender'=>'required',
+            'address'=>'required',
+        ]);
         $user = User::findOrFail($id);
         $data = $request->all();
         if ($request->has('image')) {

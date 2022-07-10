@@ -20,6 +20,7 @@ class AppConfigController extends Controller
             'email' => 'required',
             'phone' => 'required',
             'address' => 'required',
+            'maps' => 'required',
             'image' => 'required',
             'description' => 'required',
         ];
@@ -38,8 +39,8 @@ class AppConfigController extends Controller
             $imageName = $filename . '_' . time() . '.' . $request->image->extension();
             $request->image->storeAs('images', $imageName);
             AppConfig::create([
-                'image' => asset('storage/images/' . $imageName),
                 ...$data,
+                'image' => asset('storage/images/' . $imageName),
             ]);
         } else {
             AppConfig::create([
@@ -63,6 +64,14 @@ class AppConfigController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'address'=>'required',
+            'maps'=>'required',
+            'description'=>'required'
+        ]);
         $app = AppConfig::findOrFail($id);
         $data = $request->all();
         if ($request->has('image')) {
@@ -80,5 +89,12 @@ class AppConfigController extends Controller
             ]);
         }
         return redirect()->route('app.index');
+    }
+
+    public function destroy($id)
+    {
+        $data = AppConfig::findOrFail($id);
+        $data->delete();
+        return redirect()->back();
     }
 }

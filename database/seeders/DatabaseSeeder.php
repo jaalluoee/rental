@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         AppConfig::create([
             'name' => 'subdriveweb',
             'email' => 'subdriveweb@gmail.com',
-            'phone' => '08123456789',
+            'phone' => '628123456789',
             'address'=> 'Jl. Ketintang No.156, Ketintang, Kec. Gayungan, Kota SBY, Jawa Timur 60231',
             'image' => 'subdriveweb',
             'description' => 'Subdrive Web merupakan jasa layanan penyewaan kendaraan yang bekerja sama dengan rental-rental mobil dan motor di Surabaya untuk menawarkan jasa rental mobil kepada calon pelanggan khususnya bagi para turis asing maupun dalam negeri yang hendak berwisata di kota Surabaya.',
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'subdriveweb',
             'email' => 'subdriveweb@gmail.com',
-            'phone' => '08123456789',
+            'phone' => '628123456789',
             'gender' => 'laki laki',
             'address' => 'Jl. Ketintang No.156, Ketintang, Kec. Gayungan, Kota SBY, Jawa Timur 60231',
             'image' => 'subdriveweb',

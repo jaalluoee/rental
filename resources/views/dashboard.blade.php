@@ -17,12 +17,11 @@ use App\Models\User;
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    SELAMAT DATANG DI SUBDRIVEWEB
+                    DATA  SUBDRIVEWEB
                 </div>
                 <div class="stats shadow w-full">
-
                     <div class="stat place-items-center">
-                        <div class="stat-title">Penyewa</div>
+                        <div class="stat-title">User</div>
                         <div class="stat-value">{{ Order::count() }}</div>
                         <!-- <div class="stat-desc">Januari sampai dengan Februari</div> -->
                     </div>
@@ -31,9 +30,8 @@ use App\Models\User;
                         <div class="stat-value text-secondary">{{ Warehouse::count() }}</div>
                         <!-- <div class="stat-desc text-secondary">↗︎ 40 (2%)</div> -->
                     </div>
-
                     <div class="stat place-items-center">
-                        <div class="stat-title">Pengguna</div>
+                        <div class="stat-title">Admin</div>
                         <div class="stat-value">{{ User::count() }}</div>
                         <!-- <div class="stat-desc">↘︎ 90 (14%)</div> -->
                     </div>

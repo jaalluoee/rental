@@ -48,16 +48,7 @@
                         Produk
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('login') }}">
-                        Login
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('register') }}">
-                        Register
-                    </a>
-                </li>
+                
             </ul>
         </div>
     </nav>
@@ -67,16 +58,16 @@
     <footer class="footer p-10 bg-base-200 text-base-content">
         <div>
             <span class="footer-title">Link</span>
-            <a class="link link-hover">Beranda</a>
-            <a class="link link-hover">Hubungi Kami</a>
-            <a class="link link-hover">Produk</a>
-            <a class="link link-hover">Tentang Kami</a>
+            <a href="" class="link link-hover">Beranda</a>
+            <a href="contact-us" class="link link-hover">Hubungi Kami</a>
+            <a href="about-us" class="link link-hover">Tentang Kami</a>
+            <a href="product" class="link link-hover">Produk</a>
         </div>
         <div>
             <span class="footer-title">Sosial Media</span>
-            <a class="link link-hover">Whatsapp</a>
-            <a href="" class="link link-hover">Google Map</a>
-            
+            <a href="mailto:{{ $settings->email }}">Email</a>
+            <a href="https://api.whatsapp.com/send?phone={{ $settings->phone }}&text=Selamat%20Datang%20Di%20SUBDRIVEWEB%20Silahkan%20Isi%20Formulir%20Yang%20Sudah%20Disediakan%20Dibawah%20Ini%0ANama%20:%0AEmail%20:%0AJenis%20Kendaraan%20:%0ADurasi%20Sewa%20:%0ADeskripsi%20:%0A" class="link link-hover">Whatsapp</a>
+            <a href="https://www.google.com/maps/place/Institut+Teknologi+Telkom+Surabaya/@-7.3112662,112.7266958,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd7fbd1cb925a1d:0x1dbecb0b2e9b059f!8m2!3d-7.3112662!4d112.7288845" class="link link-hover">Google Map</a>
         </div>
         <div class="max-w-lg">
             <div class="items-center grid-flow-col">

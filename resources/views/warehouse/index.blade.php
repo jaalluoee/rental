@@ -19,13 +19,13 @@
                                 Nama Produk
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Tipe
+                                Brand
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Gambar
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Brand
+                                Tipe
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Sewa 
@@ -44,13 +44,13 @@
                                 </a>
                             </th>
                             <td class="px-6 py-4">
-                                {{ $result->type }}
+                                {{ $result->brand }}
                             </td>
                             <td>
                                 <img width="100" class="w-24" src="{{ $result->image }}" alt="">
                             </td>
                             <td class="px-6 py-4">
-                                {{ $result->brand }}
+                                {{ $result->type }}
                             </td>
                             <td class="px-6 py-4">
                                 Rp. {{ $result->cost }}
